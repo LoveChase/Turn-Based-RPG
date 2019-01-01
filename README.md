@@ -16,10 +16,10 @@
 
 * Search for an Enemy
 * Select your Character to attack
-* Then your turn after attacking
+* Then end your turn after attacking
 * This Game is currently only a prototype and does not continue further than the players turn.
 
-### This PROJECT ALSO CONTAIN A DECK MANAGER BASED ON YUGIOH AND AR EXTENSION USING AR.JS
+#### This PROJECT ALSO CONTAINS A DECK MANAGER BASED ON YUGIOH AND AR EXTENSION USING AR.JS
 
 * Combining all of these elements is the end goal of the project, but as a result this has made the demo incomplete while the app is transitioning.
 
