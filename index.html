@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>TCG</title>
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popBox.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+  </script>
+    <script src="js/gamemanager.test.js"></script>
+    <script src="js/player.test.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/popBox.js"></script>
+  </head>
+  <body>
+
+    <div class="header">
+      <p>Play the greatest RPG ever to be made!</p>
+      <h2>Choose your character!</h2>
+    </div>
+
+    <div class="interface">
+      <a href="#" onclick="GameManager.setGameStart('Shadow Dragon')" style="padding:10px;">
+        <img src="img/avatar-player/shadow dragon.png" alt="Dark Dragon">
+        <div>
+          <h3>Dark Dragon</h3>
+          <p>Born out of fears, Shadow Dragon induces nightmares into its preys' minds.
+            Upon attack, no light can escape its destructive fury.</p>
+        </div>
+      </a>
+      <a href="#" onclick="GameManager.setGameStart('Light Dragon')" style="padding:10px;">
+        <img src="https://em.wattpad.com/0e4afade20f3078224fe2d934d72b1cbe4bdf736/687474703a2f2f696d61676573322e616c706861636f646572732e636f6d2f3233332f3233333833322e6a7067?s=fit&h=360&w=360&q=80" alt="rogue">
+        <div>
+          <h3>Light Dragon</h3>
+          <p>The Light Dragon is a peaceful and destructive species. It's holy light can indeed blind any Dragon that dares to go up against them.</p>
+        </div>
+      </a>
+      
+    </div>
+
+    <div class="actions">
+
+    </div>
+
+    <div class="arena">
+      <div id="playerGrave" class="player-grave-yard"><h2>Player GraveYard</h2></div>
+      <div id="enemyGrave" class="enemy-grave-yard"><h2>Enemy GraveYard</h2></div>
+    </div>
+
+    <div class="enemy">
+
+    </div>
+
+    <div class="footer-attack" style="display: none;">
+    <a href="#" class="btn-prefight" onclick="PlayerMoves.calcAttack()">Attack!</a>
+    <a href="#" class="btn-prefight" onclick="GameManager.hideFooter()">Cancel</a>
+    </div>
+    
+    <div class="footer-defend" style="display: none;">
+      <a href="#" class="btn-prefight" onclick="GameManager.hideFooter()">Cancel</a>
+      </div>
+
+      <div class="playerGravePop">
+          <span>✖</span>
+          <h3>Player GraveYard</h3>
+        </div>
+
+        <div class="enemyGravePop">
+          <span>✖</span>
+          <h3>Enemy GraveYard</h3>
+        </div>
+
+  </body>
+</html>

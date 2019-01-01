@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+        <head><!-- <script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_reload-2a5c7ad0fe826f66e054c6020c99c1e1c63210256b6ba07eb41d7a4cb0d0adab.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/ChaseLove/pen/OaNrZJ" /> -->
+        
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="deck.css">
+        <link rel="stylesheet" href="../popBox.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="../js/gamemanager.deck.js"></script>
+        <script src="../js/player.test.js"></script>
+        <script src="../js/enemy.js"></script>
+        <script src="../js/popBox.js"></script>
+</head>
+<body>
+            <div class="text-center">
+                    <a style='margin: 1rem 0;' id="play" class='btn btn-success' role='button'><i class='fa fa-play-circle' aria-hidden='true'></i> Play Test Deck</a>
+                    <div id="playtest" title="Playtest Beta">
+                        <div class="game-board">
+                            <div class="actions">
+                                <input type="button" value="New Hand" id="new">
+                                <input type="button" value="View Deck" id="view">
+                                <input type="button" value="Draw Card" id="deal">
+                                <input type="button" value="Shuffle Deck" id="shuffle">
+                                <div class="tools">
+                                    <img src="https://i.imgur.com/BYD9LdN.png" class="token"/>
+                                    <img src="https://i.imgur.com/1AJdr5l.png" alt="" class="coin">
+                                    <img src="https://i.imgur.com/oPHhyyo.png" alt="" class="dice">
+                                    <div style="display:inline-block"><span id="results"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAABCAQAAAAoEQWKAAAADElEQVR42mNkGCAAAADyAAKG+BtxAAAAAElFTkSuQmCC"></span></div>
+                                </div>
+                            </div>
+                            <div id="deckmenu" title="Cards in Deck"></div>
+                            <div class="testcard-slot-row" id="field">
+                                <div class="testcard-slot"></div>
+                                <div class="testcard-slot"></div>
+                                <div class="testcard-slot" id="center-m-z"></div>
+                                <div class="testcard-slot"></div>
+                                <div class="testcard-slot"></div>
+                            </div>
+                            <div class="testcard-slot-row">
+                                <div class="testcard-slot"><img src="http://img3.wikia.nocookie.net/__cb20130902115200/yugioh/images/e/ee/Back-ZX-Site.png" id="playerextradeck" />
+                                    <div id="deckcount"><p></p></div>
+                                </div>
+                                <div class="testcard-slot"></div>
+                                <div class="testcard-slot"></div>
+                                <div class="testcard-slot"></div>
+                                <div class="testcard-slot"><img src="http://img3.wikia.nocookie.net/__cb20130902115200/yugioh/images/e/ee/Back-ZX-Site.png" id="playerdeck" />
+                                    <div id="deckcount"><p></p></div>
+                                </div>
+                            </div>
+                            <div id="hand">
+                                <div class="game-board"></div>
+                            </div>
+                            <div class="export" title="Export Code"></div>
+                            <div class="import" title="Import Code"></div>
+                        </div>          
+                    </div>
+                </div>
+                
+<div class="footer-attack" style="display: none;">
+    <a href="#" class="btn-prefight" onclick="PlayerMoves.calcAttack()">Attack!</a>
+    <a href="#" class="btn-prefight" onclick="GameManager.hideFooter()">Cancel</a>
+</div>
+    
+<div class="footer-defend" style="display: none;">
+    <a href="#" class="btn-prefight" onclick="GameManager.hideFooter()">Cancel</a>
+</div>
+            <script src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>   
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script>
+
+<script src="deck.js"></script>
+</body>
+</html>
