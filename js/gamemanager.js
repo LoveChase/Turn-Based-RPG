@@ -34,7 +34,7 @@ let GameManager = {
     let getActions = document.querySelector(".actions");
     let getEnemy = document.querySelector(".enemy");
     // Create enemy!
-    let enemy00 = new Enemy("Goblin", 100, 0, 50, 100, 100);
+    let enemy00 = new Enemy("Goblin", 150, 0, 100, 100, 150);
     let enemy01 = new Enemy("Troll", 200, 0, 150, 80, 150);
     let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(2));
     switch (chooseRandomEnemy) {
