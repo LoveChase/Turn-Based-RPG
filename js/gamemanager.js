@@ -5,24 +5,21 @@ let GameManager = {
   },
   resetPlayer: function(classType) {
     switch (classType) {
-      case "Light Dragon":
-        player = new Player(classType, 200, 0, 200, 100, 50, 100, 'Light', 'Dragon');
+      case "Warrior":
+        player = new Player(classType, 200, 0, 200, 100, 50);
         break;
-      case "Shadow Dragon":
-        player = new Player(classType, 100, 0, 100, 150, 200, 100, 'Shadow', 'Dragon');
+      case "Rogue":
+        player = new Player(classType, 100, 0, 100, 150, 200);
         break;
-/*       case "Mage":
+      case "Mage":
         player = new Player(classType, 80, 0, 50, 200, 50);
         break;
       case "Hunter":
         player = new Player(classType, 200, 0, 50, 200, 100);
-        break; */
+        break;
     }
-
     let getInterface = document.querySelector(".interface");
-    getInterface.innerHTML = '<a onclick="revealFooter();"><img src="img/avatar-player/' + classType.toLowerCase() + '.png" class="img-avatar"><div><h3>' + 
-    classType + '</h3><p class="health-player">Health: ' + player.health + '</p><p>Mana: ' + player.mana + '</p><p>Strength: ' + 
-    player.strength + '</p><p>Agility: ' + player.agility + '</p><p>Speed: ' + player.speed + '</p><p>Defense: ' + player.defense + '</p></div></a>';
+    getInterface.innerHTML = '<img src="img/avatar-player/' + classType.toLowerCase() + '.png" class="img-avatar"><div><h3>' + classType + '</h3><p class="health-player">Health: ' + player.health + '</p><p>Mana: ' + player.mana + '</p><p>Strength: ' + player.strength + '</p><p>Agility: ' + player.agility + '</p><p>Speed: ' + player.speed + '</p></div>';
   },
   setPreFight: function() {
     let getHeader = document.querySelector(".header");
@@ -37,8 +34,8 @@ let GameManager = {
     let getActions = document.querySelector(".actions");
     let getEnemy = document.querySelector(".enemy");
     // Create enemy!
-    let enemy00 = new Enemy("Goblin", 100, 0, 50, 100, 100, 50);
-    let enemy01 = new Enemy("Troll", 200, 0, 150, 80, 150, 100);
+    let enemy00 = new Enemy("Goblin", 100, 0, 50, 100, 100);
+    let enemy01 = new Enemy("Troll", 200, 0, 150, 80, 150);
     let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(2));
     switch (chooseRandomEnemy) {
       case 0:
@@ -50,26 +47,6 @@ let GameManager = {
     }
     getHeader.innerHTML = '<p>Task: Choose your move!</p>';
     getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="PlayerMoves.calcAttack()">Attack!</a>';
-    getEnemy.innerHTML = '<a onclick="enemyListener();"><img src="img/avatar-enemies/' + enemy.enemyType.toLowerCase() + '.png" alt="' + enemy.enemyType + '" class="img-avatar"><div><h3>' +
-     enemy.enemyType + '</h3><p class="health-enemy">Health: ' + enemy.health + '</p><p>Mana: ' + enemy.mana + '</p><p>Strength: ' +
-      enemy.strength + '</p><p>Agility: ' + enemy.agility + '</p><p>Speed: ' + enemy.speed + '</p><p>Defense: ' + enemy.defense + '</p></div></a>';
-  },
-  setEnemy: function(){
-    console.log(enemy)
+    getEnemy.innerHTML = '<img src="img/avatar-enemies/' + enemy.enemyType.toLowerCase() + '.png" alt="' + enemy.enemyType + '" class="img-avatar"><div><h3>' + enemy.enemyType + '</h3><p class="health-enemy">Health: ' + enemy.health + '</p><p>Mana: ' + enemy.mana + '</p><p>Strength: ' + enemy.strength + '</p><p>Agility: ' + enemy.agility + '</p><p>Speed: ' + enemy.speed + '</p></div>';
   }
-}
-
-
-function revealFooter() {
-  var x = document.querySelector(".footer");
-  if (x.style.display === "none") {
-      x.style.display = "block";
-  } else {
-      x.style.display = "none";
-      console.log(player)
-  }
-}
-
-function enemyListener(){
-  console.log(enemy)
 }
